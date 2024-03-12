@@ -1,7 +1,6 @@
 package com.example.calculator
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -376,21 +375,20 @@ private fun Calculator () {
             Column {
                 IconButton(
                     onClick = {
-                        if (operator == "+" )
-                        {
-                            calculation.value = "${ helper.doubleValue + calculation.value.toDouble() }"
-                        }
-                        else if(operator == "-")
-                        {
-                            calculation.value = "${ helper.doubleValue - calculation.value.toDouble() }"
-                        }
-                        else if(operator == "*")
-                        {
-                            calculation.value = "${ helper.doubleValue * calculation.value.toDouble() }"
-                        }
-                        else if(operator == "/")
-                        {
-                            calculation.value = "${ helper.doubleValue / calculation.value.toDouble() }"
+
+                        when (operator) {
+                            "+" -> {
+                                calculation.value = "${ helper.doubleValue + calculation.value.toDouble() }"
+                            }
+                            "-" -> {
+                                calculation.value = "${ helper.doubleValue - calculation.value.toDouble() }"
+                            }
+                            "*" -> {
+                                calculation.value = "${ helper.doubleValue * calculation.value.toDouble() }"
+                            }
+                            "/" -> {
+                                calculation.value = "${ helper.doubleValue / calculation.value.toDouble() }"
+                            }
                         }
                               },
                     modifier = Modifier

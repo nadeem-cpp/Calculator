@@ -1,6 +1,7 @@
 package com.example.calculator
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -28,8 +29,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -39,6 +42,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.calculator.ui.theme.BgColor1
+import com.example.calculator.ui.theme.BgColor2
 import com.example.calculator.ui.theme.BtnColor
 import com.example.calculator.ui.theme.CalculatorTheme
 
@@ -91,30 +96,28 @@ private fun Calculator () {
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        Color(0xFFF3F3F3), // Start color
-                        Color(0xFF8D8D8D)  // End color
-
+                        BgColor1, BgColor2
                     )
                 )
             )
     )
     Column(
         modifier = Modifier
-//            .wrapContentSize()
             .fillMaxSize()
             .padding(20.dp)
             ,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        val calculation = remember { mutableStateOf("calculations") }
-        val expression by remember { mutableStateOf("expression") }
+        val calculation = remember { mutableStateOf("") }
+        val helper = remember { mutableDoubleStateOf(0.0) }
+        var operator by remember { mutableStateOf("") }
 
         Box(modifier = Modifier
             .height(40.dp)
             .fillMaxWidth(),
             contentAlignment = Alignment.BottomEnd
         ){
-            Text(text = expression)
+            Text(text = "${ helper.doubleValue }")
         }
         Text(text = calculation.value, fontSize = 38.sp, textAlign = TextAlign.End,
             modifier = Modifier
@@ -158,7 +161,12 @@ private fun Calculator () {
                 )
 
             }
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(
+                onClick = {
+                    helper.doubleValue = calculation.value.toDouble()
+                    calculation.value = ""
+                    operator = "/"
+                          },
                 modifier = Modifier
                     .size(70.dp)
                     .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -169,7 +177,12 @@ private fun Calculator () {
                     tint = Color.DarkGray
                 )
             }
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(
+                onClick = {
+                    helper.doubleValue = calculation.value.toDouble()
+                    calculation.value = ""
+                    operator = "*"
+                },
                 modifier = Modifier
                     .size(70.dp)
                     .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -216,7 +229,12 @@ private fun Calculator () {
                     description = "digit"
                 )
             }
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(
+                onClick = {
+                    helper.doubleValue = calculation.value.toDouble()
+                    calculation.value = ""
+                    operator = "-"
+                          },
                 modifier = Modifier
                     .size(70.dp)
                     .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -251,8 +269,12 @@ private fun Calculator () {
                     description = "digit"
                 )
             }
-
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(
+                onClick = {
+                    helper.doubleValue = calculation.value.toDouble()
+                    calculation.value = ""
+                    operator = "+"
+                          },
                 modifier = Modifier
                     .size(70.dp)
                     .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -342,24 +364,35 @@ private fun Calculator () {
                 }
 
                 Row {
-                    IconButton(onClick = { /*TODO*/ },
-                        modifier = Modifier
-                            .size(70.dp)
-                            .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-                    ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.dice_1),
-                            contentDescription = "Favorite",
-                            modifier = Modifier.size(40.dp),
-                            tint = Color.DarkGray
-                        )
-
-                    }
+                    IconBtn(
+                        text = calculation,
+                        iconID = R.drawable.dice_1,
+                        value = "." ,
+                        description = "dot"
+                    )
                 }
 
             }
             Column {
-                IconButton(onClick = { /*TODO*/ },
+                IconButton(
+                    onClick = {
+                        if (operator == "+" )
+                        {
+                            calculation.value = "${ helper.doubleValue + calculation.value.toDouble() }"
+                        }
+                        else if(operator == "-")
+                        {
+                            calculation.value = "${ helper.doubleValue - calculation.value.toDouble() }"
+                        }
+                        else if(operator == "*")
+                        {
+                            calculation.value = "${ helper.doubleValue * calculation.value.toDouble() }"
+                        }
+                        else if(operator == "/")
+                        {
+                            calculation.value = "${ helper.doubleValue / calculation.value.toDouble() }"
+                        }
+                              },
                     modifier = Modifier
                         .width(70.dp)
                         .fillMaxHeight()

@@ -216,43 +216,6 @@ private fun Calculator () {
                     description = "digit"
                 )
             }
-//            IconButton(onClick = { calculation.value += "7" },
-//                modifier = Modifier
-//                    .size(70.dp)
-//                    .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//            ) {
-//                Icon(
-//                    painter = painterResource(id = R.drawable.square_7),
-//                    contentDescription = "Favorite",
-//                    modifier = Modifier.size(40.dp),
-//                    tint = Color.DarkGray
-//                )
-//
-//            }
-//            IconButton(onClick = { calculation.value += "8" },
-//                modifier = Modifier
-//                    .size(70.dp)
-//                    .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//            ) {
-//                Icon(painter = painterResource(id = R.drawable.square_8),
-//                    contentDescription = "Divider",
-//                    modifier = Modifier.size(40.dp)
-//                )
-//            }
-//            IconButton(onClick = { calculation.value += "9"},
-//                modifier = Modifier
-//                    .size(70.dp)
-//                    .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//            ) {
-//                Icon(
-//                    painter = painterResource(id = R.drawable.square_9),
-//                    contentDescription = "Favorite",
-//                    modifier = Modifier.size(40.dp),
-//                    tint = Color.DarkGray
-//
-//                )
-//
-//            }
             IconButton(onClick = { /*TODO*/ },
                 modifier = Modifier
                     .size(70.dp)
@@ -288,40 +251,7 @@ private fun Calculator () {
                     description = "digit"
                 )
             }
-//            IconButton(onClick = { calculation.value += "4"},
-//                modifier = Modifier
-//                    .size(70.dp)
-//                    .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//            ) {
-//                Icon(
-//                    painter = painterResource(id = R.drawable.square_4),
-//                    contentDescription = "Favorite",
-//                    modifier = Modifier.size(40.dp)
-//                )
-//
-//            }
-//            IconButton(onClick = { calculation.value += "5" },
-//                modifier = Modifier
-//                    .size(70.dp)
-//                    .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//            ) {
-//                Icon(painter = painterResource(id = R.drawable.square_5),
-//                    contentDescription = "Divider",
-//                    modifier = Modifier.size(40.dp)
-//                )
-//            }
-//            IconButton(onClick = { calculation.value += "6" },
-//                modifier = Modifier
-//                    .size(70.dp)
-//                    .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//            ) {
-//                Icon(
-//                    painter = painterResource(id = R.drawable.square_6),
-//                    contentDescription = "Favorite",
-//                    modifier = Modifier.size(40.dp)
-//                )
-//
-//            }
+
             IconButton(onClick = { /*TODO*/ },
                 modifier = Modifier
                     .size(70.dp)
@@ -339,12 +269,9 @@ private fun Calculator () {
         }
         Row(
             modifier = Modifier
-//                .wrapContentHeight()
                 .fillMaxWidth()
                 .height(153.dp),
-//                .background(color = Color.Green),
             horizontalArrangement = Arrangement.SpaceBetween,
-//            verticalAlignment = Alignment.Top
         ) {
             Column(
                 modifier = Modifier.fillMaxHeight(),
@@ -358,22 +285,6 @@ private fun Calculator () {
                         value = "1",
                         description = "digit 1"
                     )
-//                    IconButton(
-//                        onClick = {
-//                            if  (calculation.value.length <= maxInput) { calculation.value += "1" }
-//                                  },
-//                        modifier = Modifier
-//                            .size(70.dp)
-//                            .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//                    ) {
-//                        Icon(
-//                            painter = painterResource(id = R.drawable.square_1),
-//                            contentDescription = "Favorite",
-//                            modifier = Modifier.size(40.dp)
-//                        )
-//
-//                    }
-
                 }
 
                 Row {
@@ -403,16 +314,6 @@ private fun Calculator () {
                         value = "2",
                         description = "digit 2"
                     )
-//                    IconButton(onClick = { calculation.value += "2" },
-//                        modifier = Modifier
-//                            .size(70.dp)
-//                            .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//                    ) {
-//                        Icon(painter = painterResource(id = R.drawable.square_2),
-//                            contentDescription = "Divider",
-//                            modifier = Modifier.size(40.dp)
-//                        )
-//                    }
 
                 }
                 Row {
@@ -422,16 +323,6 @@ private fun Calculator () {
                         value = "0",
                         description = "digit 0"
                     )
-//                    IconButton(onClick = {calculation.value += "0" },
-//                        modifier = Modifier
-//                            .size(70.dp)
-//                            .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//                    ) {
-//                        Icon(painter = painterResource(id = R.drawable.square_0),
-//                            contentDescription = "Divider",
-//                            modifier = Modifier.size(40.dp)
-//                        )
-//                    }
 
                 }
 
@@ -448,18 +339,6 @@ private fun Calculator () {
                         value = "3",
                         description = "digit 3"
                     )
-//                    IconButton(onClick = { calculation.value += "3"},
-//                        modifier = Modifier
-//                            .size(70.dp)
-//                            .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-//                    ) {
-//                        Icon(
-//                            painter = painterResource(id = R.drawable.square_3),
-//                            contentDescription = "Favorite",
-//                            modifier = Modifier.size(40.dp)
-//                        )
-//
-//                    }
                 }
 
                 Row {

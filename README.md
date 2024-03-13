@@ -12,7 +12,7 @@ This Android Calculator application is built entirely using Jetpack Compose, the
 
 ## Preview
 
-[Watch the Application in Action (Click Here)]([https://www.youtube.com/watch?v=your_video_id](https://youtube.com/shorts/gnSQByB2wu8?feature=share))
+[Watch the Application in Action (Click Here)]([[https://www.youtube.com/watch?v=your_video_id](https://youtube.com/shorts/gnSQByB2wu8?feature=share)](https://youtube.com/shorts/gnSQByB2wu8?feature=share))
 
 
 ## Getting Started

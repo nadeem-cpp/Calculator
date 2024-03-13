@@ -309,7 +309,12 @@ private fun Calculator () {
                 }
 
                 Row {
-                    IconButton(onClick = { /*TODO*/ },
+                    IconButton(
+                        onClick = {
+                            helper.doubleValue = calculation.value.toDouble()
+                            calculation.value = ""
+                            operator = "%"
+                                  },
                         modifier = Modifier
                             .size(70.dp)
                             .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -388,6 +393,9 @@ private fun Calculator () {
                             }
                             "/" -> {
                                 calculation.value = "${ helper.doubleValue / calculation.value.toDouble() }"
+                            }
+                            "%" -> {
+                                calculation.value = "${ (helper.doubleValue / calculation.value.toDouble()) * 100 }"
                             }
                         }
                               },

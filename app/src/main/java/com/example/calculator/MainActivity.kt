@@ -38,7 +38,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.calculator.ui.theme.BgColor1
@@ -86,7 +85,7 @@ fun IconBtn(text: MutableState<String>, iconID: Int, value: String, description:
 
 
 
-@Preview(showSystemUi = true, showBackground = true)
+//@Preview(showSystemUi = true, showBackground = true)
 @Composable
 private fun Calculator () {
     Box(
@@ -140,12 +139,9 @@ private fun Calculator () {
             verticalAlignment = Alignment.CenterVertically
         ) {
 
-//            IconBtn(
-//                text = calculation,
-//                iconID = R.drawable.trash3,
-//                description = "clear")
-
-            IconButton(onClick = { calculation.value = "" },
+            IconButton(onClick = { calculation.value = ""
+                                 helper.doubleValue = 0.0
+                                 },
                 modifier = Modifier
                     .size(70.dp)
                     .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -194,7 +190,14 @@ private fun Calculator () {
                 )
 
             }
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(onClick = {
+                val length = calculation.value.length
+                if (length > 0)
+                {
+                    calculation.value = calculation.value.subSequence(0, length -1).toString()
+                }
+
+            },
                 modifier = Modifier
                     .size(70.dp)
                     .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
@@ -395,7 +398,7 @@ private fun Calculator () {
                                 calculation.value = "${ helper.doubleValue / calculation.value.toDouble() }"
                             }
                             "%" -> {
-                                calculation.value = "${ (helper.doubleValue / calculation.value.toDouble()) * 100 }"
+                                calculation.value = "${ (helper.doubleValue / 100 ) * calculation.value.toDouble() }"
                             }
                         }
                               },
@@ -421,5 +424,3 @@ private fun Calculator () {
 
     }
 }
-
-

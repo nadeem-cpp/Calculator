@@ -12,13 +12,8 @@ This Android Calculator application is built entirely using Jetpack Compose, the
 
 ## Preview
 
-[Watch the Application in Action (Click Here)](https://www.youtube.com/watch?v=your_video_id)
+[Watch the Application in Action (Click Here)]([https://www.youtube.com/watch?v=your_video_id](https://youtube.com/shorts/gnSQByB2wu8?feature=share))
 
-## Screenshots
-
-![Calculator App Screenshot 1](/screenshots/screenshot1.png)
-![Calculator App Screenshot 2](/screenshots/screenshot2.png)
-![Calculator App Screenshot 3](/screenshots/screenshot3.png)
 
 ## Getting Started
 

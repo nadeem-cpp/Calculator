@@ -38,6 +38,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.calculator.ui.theme.BgColor1
@@ -301,83 +302,65 @@ private fun Calculator () {
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                Row {
-
-                    IconBtn(
-                        text = calculation,
-                        iconID = R.drawable.square_1,
-                        value = "1",
-                        description = "digit 1"
+                IconBtn(
+                    text = calculation,
+                    iconID = R.drawable.square_1,
+                    value = "1",
+                    description = "digit 1"
+                )
+                IconButton(
+                    onClick = {
+                        helper.doubleValue = calculation.value.toDouble()
+                        calculation.value = ""
+                        operator = "%"
+                              },
+                    modifier = Modifier
+                        .size(70.dp)
+                        .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.percent),
+                        contentDescription = "Favorite",
+                        modifier = Modifier.size(40.dp),
+                        tint = Color.DarkGray
                     )
                 }
-
-                Row {
-                    IconButton(
-                        onClick = {
-                            helper.doubleValue = calculation.value.toDouble()
-                            calculation.value = ""
-                            operator = "%"
-                                  },
-                        modifier = Modifier
-                            .size(70.dp)
-                            .background(color = BtnColor, shape = MaterialTheme.shapes.medium)
-                    ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.percent),
-                            contentDescription = "Favorite",
-                            modifier = Modifier.size(40.dp),
-                            tint = Color.DarkGray
-                        )
-                    }
-                }
-
             }
             Column(
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                Row {
-                    IconBtn(
+                IconBtn(
                         text = calculation,
                         iconID = R.drawable.square_2,
                         value = "2",
                         description = "digit 2"
                     )
-
-                }
-                Row {
-                    IconBtn(
+                IconBtn(
                         text = calculation,
                         iconID = R.drawable.square_0,
                         value = "0",
                         description = "digit 0"
                     )
 
-                }
 
             }
             Column(
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                Row {
-
-                    IconBtn(
+                IconBtn(
                         text = calculation,
                         iconID = R.drawable.square_3,
                         value = "3",
                         description = "digit 3"
                     )
-                }
-
-                Row {
-                    IconBtn(
+                IconBtn(
                         text = calculation,
                         iconID = R.drawable.dice_1,
                         value = "." ,
                         description = "dot"
                     )
-                }
 
             }
             Column {
@@ -415,12 +398,8 @@ private fun Calculator () {
                         tint = Color.DarkGray
 
                     )
-
                 }
-
             }
-
         }
-
     }
 }

@@ -1,7 +1,4 @@
-
-<center>
 https://github.com/nadeem-cpp/Calculator/assets/106726589/6aa13c84-3144-465d-a59f-c34bca3d199d
-</center>
 
 # Jetpack Compose Calculator App
 

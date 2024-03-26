@@ -1,3 +1,8 @@
+
+
+https://github.com/nadeem-cpp/Calculator/assets/106726589/6aa13c84-3144-465d-a59f-c34bca3d199d
+
+
 # Jetpack Compose Calculator App
 
 This Android Calculator application is built entirely using Jetpack Compose, the modern toolkit for building native UIs in Android. With a sleek and intuitive user interface, this calculator provides a seamless user experience for performing mathematical calculations.
